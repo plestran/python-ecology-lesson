@@ -72,12 +72,9 @@ To build a `plotnine` graphic we need to:
 As we have not defined anything else, just an empty figure is available and
 presented.
 
-As we have not defined anything else, just an empty figure is available and
-presented.
-
 - Define aesthetics (`aes`), by **selecting variables** used in the plot and
 `mapping` them to a presentation such as plotting size, shape color, etc. You
-can interpret this as: *which** of the variables will influence the plotted
+can interpret this as: **which** of the variables will influence the plotted
 objects/geometries:
 
 ~~~
@@ -494,6 +491,7 @@ survey_2000 = surveys_complete[surveys_complete["year"].isin([2000, 2001])]
 > > ## Answers
 > > yearly_weight = surveys_complete.groupby(['year', 'species_id', 'sex'])['weight'].mean().reset_index()
 > >
+> > ~~~
 > > (p9.ggplot(data=yearly_weight,
 > >            mapping=p9.aes(x='year',
 > >                           y='weight',
@@ -501,6 +499,7 @@ survey_2000 = surveys_complete[surveys_complete["year"].isin([2000, 2001])]
 > >     + p9.geom_line()
 > >     + p9.facet_wrap("sex")
 > > )
+> > ~~~
 > > {: .language-python}
 > {: .solution}
 {: .challenge}
